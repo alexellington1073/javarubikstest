@@ -11,6 +11,9 @@ public class CornerPiece extends Piece {
         this.colorZ = colorZ;
     }
 
+    public CornerPiece() {
+
+    }
 
 
     public String getColorX() {
@@ -35,5 +38,15 @@ public class CornerPiece extends Piece {
 
     public void setColorZ(String colorZ) {
         this.colorZ = colorZ;
+    }
+
+    //TODO use getNextColorNeeded to populate colors
+    public CornerPiece[] createCornerPieces() {
+        CornerPiece[] cornerPieceArr = new CornerPiece[8];
+        for (int i = 0; i < 8; i ++) {
+            CornerPiece cp = new CornerPiece();
+            cornerPieceArr[i] = cp;
+        }
+        return cornerPieceArr;
     }
 }

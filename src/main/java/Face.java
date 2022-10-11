@@ -1,8 +1,6 @@
-import java.util.List;
-
 public class Face {
 
-    private String faceFinalColor = "";
+    private String faceColor = "";
     private Piece[][] face = new Piece[3][3];
     private String aboveFace = "";
     private String belowFace = "";
@@ -10,39 +8,39 @@ public class Face {
     private String rightFace = "";
 
 
-    public Face(String facecolor) {
-        faceFinalColor = facecolor;
-        if (faceFinalColor.equals("Red")) {
+    public Face(String faceColor) {
+        this.faceColor = faceColor;
+        if (faceColor.equals("Red")) {
             aboveFace = "White";
             belowFace = "Yellow";
             leftFace = "Green";
             rightFace = "Blue";
         }
-        if (faceFinalColor.equals("Blue")) {
+        if (faceColor.equals("Blue")) {
             aboveFace = "Yellow";
             belowFace = "White";
             leftFace = "Red";
             rightFace = "Orange";
         }
-        if (faceFinalColor.equals("Green")) {
+        if (faceColor.equals("Green")) {
             aboveFace = "White";
             belowFace = "Yellow";
             leftFace = "Orange";
             rightFace = "Red";
         }
-        if (faceFinalColor.equals("Yellow")) {
+        if (faceColor.equals("Yellow")) {
             aboveFace = "Red";
             belowFace = "Orange";
             leftFace = "Green";
             rightFace = "Blue";
         }
-        if (faceFinalColor.equals("Orange")) {
+        if (faceColor.equals("Orange")) {
             aboveFace = "Yellow";
             belowFace = "White";
             leftFace = "Blue";
             rightFace = "Green";
         }
-        if (faceFinalColor.equals("White")) {
+        if (faceColor.equals("White")) {
             aboveFace = "Orange";
             belowFace = "Red";
             leftFace = "Green";
@@ -62,12 +60,12 @@ public class Face {
         this.face = face;
     }
 
-    public String getFaceFinalColor() {
-        return faceFinalColor;
+    public String getFaceColor() {
+        return faceColor;
     }
 
-    public void setFaceFinalColor(String faceFinalColor) {
-        this.faceFinalColor = faceFinalColor;
+    public void setFaceColor(String faceColor) {
+        this.faceColor = faceColor;
     }
 
     public String getAboveFace() {

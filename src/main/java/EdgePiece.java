@@ -4,10 +4,29 @@ public class EdgePiece extends Piece {
     private String colorY = "";
 
 
+
+
     public EdgePiece(String colorX, String colorY) {
         this.colorX = colorX;
         this.colorY = colorY;
     }
+
+    public EdgePiece() {
+
+    }
+//TODO use getNextColorNeeded to populate colors
+    public EdgePiece[] createEdgePieces() {
+        EdgePiece[] edgePieceArr = new EdgePiece[12];
+        for(int i = 0; i < edgePieceArr.length; i++) {
+            EdgePiece ep = new EdgePiece();
+
+
+            edgePieceArr[i] = ep;
+            }
+        return edgePieceArr;
+    }
+
+
 
 
     public String getColorX() {
