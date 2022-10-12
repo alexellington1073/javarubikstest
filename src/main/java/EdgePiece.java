@@ -14,7 +14,13 @@ public class EdgePiece extends Piece {
     public EdgePiece() {
 
     }
-//TODO use getNextColorNeeded to populate colors
+
+//    @Override
+    public boolean isCorner() {
+        return false;
+    }
+
+    //TODO use getNextColorNeeded to populate colors
     public EdgePiece[] createEdgePieces() {
         EdgePiece[] edgePieceArr = new EdgePiece[12];
         for(int i = 0; i < edgePieceArr.length; i++) {

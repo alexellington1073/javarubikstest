@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="639e16f4-4616-457b-bcb2-c674c00e17f3" name="Changes" comment="" />
+    <list default="true" id="639e16f4-4616-457b-bcb2-c674c00e17f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CenterPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CenterPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CornerPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CornerPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EdgePiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EdgePiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scratch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scratch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CenterPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CenterPiece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CornerPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CornerPiece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Cube.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Cube.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/EdgePiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EdgePiece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Scratch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Scratch.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -18,10 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/alexe/work/alex-ellington-student-code/module-2/02_Ordering_Limiting_and_Grouping/exercise&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
   <component name="RunManager">
     <configuration name="Scratch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Scratch" />
@@ -44,7 +69,49 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665499409796</updated>
+      <workItem from="1665520347928" duration="10244000" />
+      <workItem from="1665531484482" duration="3750000" />
+      <workItem from="1665538139256" duration="3110000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Scratch.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="cornerPieceArr[0]" />
+        <watch expression="color" />
+        <watch expression="centerPieceArr" />
+        <watch expression="cornerPieceArr[0]" />
+        <watch expression="cornerPieceArr[0]" />
+        <watch expression="cornerPieceArr" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

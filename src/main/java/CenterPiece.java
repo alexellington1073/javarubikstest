@@ -4,24 +4,34 @@ public class CenterPiece extends Piece {
 
 
     public CenterPiece(){}
+
+//    @Override
+    public boolean isCorner() {
+        return false;
+    }
+
     public CenterPiece(String colorX) {
         this.colorX = colorX;
     }
 
     public CenterPiece[] createCenterPieces() {
         CenterPiece[] centerPieceArr = new CenterPiece[6];
-        for (int i = 0; i < Colors.values().length; i++) {
-            Colors[] colorValues = Colors.values();
-            centerPieceArr[i] = new CenterPiece(colorValues[i].toString());
-        } return centerPieceArr;
+        int count = 0;
+        for (Colors color : Colors.values()) {
+            CenterPiece cp = new CenterPiece();
+            cp.setColorX(String.valueOf(color));
+            centerPieceArr[count] = cp;
+            count++;
+        }
+        return centerPieceArr;
     }
 
 
-    public String getColor() {
+    public String getColorX() {
         return colorX;
     }
 
-    public void setColor(String color) {
+    public void setColorX(String color) {
         this.colorX = color;
     }
 

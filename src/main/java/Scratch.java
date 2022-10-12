@@ -1,12 +1,17 @@
 public class Scratch {
 
     public static void main(String[] args) {
-        Piece p = new Piece();
+        Cube c = new Cube();
         CenterPiece cep = new CenterPiece();
         EdgePiece edp = new EdgePiece();
         CornerPiece cop = new CornerPiece();
-        p.createFullPieceArr(cep.createCenterPieces(),edp.createEdgePieces(),cop.createCornerPieces());
+        CenterPiece[] centerPieceArr = cep.createCenterPieces();
+        EdgePiece[] edgePieceArr = edp.createEdgePieces();
+        CornerPiece[] cornerPieceArr = cop.createCornerPieces();
+        Piece[] fullPieceArr = c.createFullPieceArr(centerPieceArr,edgePieceArr,cornerPieceArr);
 
+//        c.popColors(cornerPieceArr);
+        System.out.println(cornerPieceArr);
     }
 
 }

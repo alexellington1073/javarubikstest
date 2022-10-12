@@ -49,4 +49,8 @@ public class CornerPiece extends Piece {
         }
         return cornerPieceArr;
     }
+
+    public boolean isCorner(){
+        return true;
+    }
 }
