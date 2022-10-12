@@ -9,6 +9,10 @@ public abstract class Piece {
     private int pieceX = 0;
     private int pieceY = 0;
     private int pieceZ = 0;
+    private String colorX = "";
+    private String colorY = "";
+    private String colorZ = "";
+
 
     public int getPieceZ() {
         return pieceZ;
@@ -17,7 +21,7 @@ public abstract class Piece {
     public void setPieceZ(int pieceZ) {
         this.pieceZ = pieceZ;
     }
-    logan shelton
+
     public int getPieceY() {
         return pieceY;
     }
@@ -34,57 +38,31 @@ public abstract class Piece {
         this.pieceX = pieceX;
     }
 
-    public int[][] getCornerPositions() {
+    public abstract boolean isCenterPiece();
+    public abstract boolean isEdgePiece();
+    public abstract boolean isCornerPiece();
 
+    public String getColorZ() {
+        return colorZ;
     }
-//    private Piece[] fullPieceArr = new Piece[26];
-//    private String colorX = "";
-//    private String colorY = "";
-//    private String colorZ = "";
-//
-//    public Piece(String colorX) {
-//        this.colorX = colorX;
-//    }
-//
-//    public Piece(String colorX, String colorY){
-//        this.colorX = colorX;
-//        this.colorY = colorY;
-//    }
-//
-//    public Piece(String colorX, String colorY, String colorZ) {
-//        this.colorX = colorX;
-//        this.colorY = colorY;
-//        this.colorZ = colorZ;
-//    }
-//
-//    public Piece() {
-//
-//    }
-//
-//
-//
-//    public abstract boolean isCorner();
-//    public String getColorY() {
-//        return colorY;
-//    }
-//
-//    public void setColorY(String colorY) {
-//        this.colorY = colorY;
-//    }
-//
-//    public String getColorZ() {
-//        return colorZ;
-//    }
-//
-//    public void setColorZ(String colorZ) {
-//        this.colorZ = colorZ;
-//    }
-//
-//    public void setColorX(String colorX) {
-//        this.colorX = colorX;
-//    }
-//
-//    public String getColorX() {
-//        return colorX;
-//    }
+
+    public void setColorZ(String colorZ) {
+        this.colorZ = colorZ;
+    }
+
+    public String getColorY() {
+        return colorY;
+    }
+
+    public void setColorY(String colorY) {
+        this.colorY = colorY;
+    }
+
+    public String getColorX() {
+        return colorX;
+    }
+
+    public void setColorX(String colorX) {
+        this.colorX = colorX;
+    }
 }

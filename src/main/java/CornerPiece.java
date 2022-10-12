@@ -50,7 +50,18 @@ public class CornerPiece extends Piece {
         return cornerPieceArr;
     }
 
-    public boolean isCorner(){
+    @Override
+    public boolean isCenterPiece() {
+        return false;
+    }
+
+    @Override
+    public boolean isEdgePiece() {
+        return false;
+    }
+
+    @Override
+    public boolean isCornerPiece(){
         return true;
     }
 }

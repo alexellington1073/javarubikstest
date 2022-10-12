@@ -5,8 +5,18 @@ public class CenterPiece extends Piece {
 
     public CenterPiece(){}
 
-//    @Override
-    public boolean isCorner() {
+    @Override
+    public boolean isCenterPiece() {
+        return true;
+    }
+
+    @Override
+    public boolean isEdgePiece() {
+        return false;
+    }
+
+    @Override
+    public boolean isCornerPiece() {
         return false;
     }
 
