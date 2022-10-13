@@ -4,6 +4,8 @@ public class CubeException extends Exception{
     public CubeException(String message){super(message);}
     public CubeException(String message, Exception cause){super(message,cause);}
 
+
+    //TODO update methods to use position and color arrays
     public void duplicatePositionCheck(Piece[] fullPieceArr) throws CubeException {
 
         for (int i = 0; i < fullPieceArr.length; i++) {

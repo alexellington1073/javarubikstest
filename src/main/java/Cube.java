@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class Cube {
 
@@ -30,6 +29,7 @@ public class Cube {
             for (int y = -1; y <= 1; y++) {
                 for (int z = -1; z <= 1; z++) {
 //                        while (count != 26) {
+                    int[] xyz = new int[]{x, y, z};
                     int zeroCount = 0;
                     if (x == 0) zeroCount++;
                     if (y == 0) zeroCount++;
@@ -38,25 +38,31 @@ public class Cube {
                     switch (zeroCount) {
                         case 0:
                             CornerPiece corner = new CornerPiece();
-                            corner.setPieceX(x);
-                            corner.setPieceY(y);
-                            corner.setPieceZ(z);
+                            corner.setPiecePosXYZ(xyz);
+
+//                            corner.setPieceX(x);
+//                            corner.setPieceY(y);
+//                            corner.setPieceZ(z);
                             fullCube[count] = corner;
                             count++;
                             break;
                         case 1:
                             EdgePiece edge = new EdgePiece();
-                            edge.setPieceX(x);
-                            edge.setPieceY(y);
-                            edge.setPieceZ(z);
+                            edge.setPiecePosXYZ(xyz);
+
+//                            edge.setPieceX(x);
+//                            edge.setPieceY(y);
+//                            edge.setPieceZ(z);
                             fullCube[count] = edge;
                             count++;
                             break;
                         case 2:
                             CenterPiece center = new CenterPiece();
-                            center.setPieceX(x);
-                            center.setPieceY(y);
-                            center.setPieceZ(z);
+                            center.setPiecePosXYZ(xyz);
+
+//                            center.setPieceX(x);
+//                            center.setPieceY(y);
+//                            center.setPieceZ(z);
                             fullCube[count] = center;
                             count++;
                             break;
@@ -103,12 +109,18 @@ public class Cube {
     public void applyStickers(Piece[] fullCube) {
 
         for (Piece piece : fullCube) {
-            if (piece.getPieceY() == -1) piece.setColorY("White");
-            if (piece.getPieceY() == 1) piece.setColorY("Yellow");
-            if (piece.getPieceX() == -1) piece.setColorX("Red");
-            if (piece.getPieceX() == 1) piece.setColorX("Orange");
-            if (piece.getPieceZ() == -1) piece.setColorZ("Green");
-            if (piece.getPieceZ() == 1) piece.setColorZ("Blue");
+            if (piece.getPiecePosXYZ(1) == -1) piece.setColorXYZ(1, "White");
+//                piece.setColorY("White");
+            if (piece.getPiecePosXYZ(1) == 1) piece.setColorXYZ(1, "Yellow");
+//                piece.setColorY("Yellow");
+            if (piece.getPiecePosXYZ(0) == -1) piece.setColorXYZ(0, "Red");
+//                piece.setColorX("Red");
+            if (piece.getPiecePosXYZ(0) == 1) piece.setColorXYZ(0, "Orange");
+//                piece.setColorX("Orange");
+            if (piece.getPiecePosXYZ(2) == -1) piece.setColorXYZ(2, "Green");
+//                piece.setColorZ("Green");
+            if (piece.getPiecePosXYZ(2) == 1) piece.setColorXYZ(2, "Blue");
+//                piece.setColorZ("Blue");
         }
 
     }
@@ -146,7 +158,6 @@ public class Cube {
         }
 
 
-
         // x, -1, false
         // swap y and z in all equations for clockwise
 
@@ -174,21 +185,19 @@ public class Cube {
 
                 if (piece.getZeroCount() == 0) {
                     if (piece.getPiecePosXYZ(swapAxis1) == piece.getPiecePosXYZ(swapAxis2)) {
-                        piece.setPiecePosXYZ(swapAxis2,piece.getPiecePosXYZ(swapAxis2) * -1); //swapAxis too confusing
-                    }
-                    else piece.setPiecePosXYZ(swapAxis1,piece.getPiecePosXYZ(swapAxis2));
-                }
-
-                if(piece.getZeroCount() == 1) {
+                        piece.setPiecePosXYZ(swapAxis2, piece.getPiecePosXYZ(swapAxis2) * -1); //swapAxis too confusing
+                    } else piece.setPiecePosXYZ(swapAxis1, piece.getPiecePosXYZ(swapAxis2));
+                } else if (piece.getZeroCount() == 1) {
                     int storeSwap1 = piece.getPiecePosXYZ(swapAxis1);
                     int storeSwap2 = piece.getPiecePosXYZ(swapAxis2);
 
-                    if(piece.getPiecePosXYZ(swapAxis1) == 0) piece.setPiecePosXYZ(swapAxis1,0);
-                    else if (piece.getPiecePosXYZ(swapAxis2) == 0) piece.setPiecePosXYZ(swapAxis2,0);
+                    if (piece.getPiecePosXYZ(swapAxis1) != 0) piece.setPiecePosXYZ(swapAxis1, 0);
+                    else if (piece.getPiecePosXYZ(swapAxis2) != 0) piece.setPiecePosXYZ(swapAxis2, 0);
 
-                    if(storeSwap1 != 0) piece.setPiecePosXYZ(swapAxis2,storeSwap1);
-                    if(storeSwap2 != 0) piece.setPiecePosXYZ(swapAxis1, storeSwap2 * -1);
+                    if (storeSwap1 != 0) piece.setPiecePosXYZ(swapAxis2, storeSwap1 * -1);
+                    if (storeSwap2 != 0) piece.setPiecePosXYZ(swapAxis1, storeSwap2);
 
+                    System.out.println("test");
                     //boy I sure hope this works
 
                 }
@@ -196,5 +205,49 @@ public class Cube {
         }
 
     }
+
+    public void printCube(Piece[] fullCube) {
+        String[][] whiteFace = new String[3][3];
+        String[][] yellowFace = new String[3][3];
+        String[][] redFace = new String[3][3];
+        String[][] orangeFace = new String[3][3];
+        String[][] blueFace = new String[3][3];
+        String[][] greenFace = new String[3][3];
+
+        for (Piece piece : fullCube) {
+            if (piece.getPiecePosXYZ(1) == -1) {
+                whiteFace[piece.getPiecePosXYZ(2) + 1][piece.getPiecePosXYZ(0) + 1] = piece.getColorXYZ(1);
+            }
+            if (piece.getPiecePosXYZ(1) == 1) {
+                yellowFace[piece.getPiecePosXYZ(2) + 1][piece.getPiecePosXYZ(0) + 1] = piece.getColorXYZ(1);
+            }
+            if (piece.getPiecePosXYZ(0) == -1) {
+                redFace[piece.getPiecePosXYZ(1) + 1][piece.getPiecePosXYZ(2) + 1] = piece.getColorXYZ(0);
+            }
+            if (piece.getPiecePosXYZ(0) == 1) {
+                orangeFace[piece.getPiecePosXYZ(1) + 1][piece.getPiecePosXYZ(2) + 1] = piece.getColorXYZ(0);
+            }
+            if (piece.getPiecePosXYZ(2) == -1) {
+                greenFace[piece.getPiecePosXYZ(0) + 1][piece.getPiecePosXYZ(1) + 1] = piece.getColorXYZ(2);
+            }
+            if (piece.getPiecePosXYZ(2) == 1) {
+                blueFace[piece.getPiecePosXYZ(0) + 1][piece.getPiecePosXYZ(1) + 1] = piece.getColorXYZ(2);
+            }
+
+
+        }
+
+        String[][][] faces = new String[][][] {whiteFace,yellowFace,redFace,orangeFace,blueFace,greenFace};
+        for (String[][] face : faces) {
+            System.out.println(face[1][1] + " Face:");
+            for (String[] row : face) {
+                System.out.println(Arrays.toString(row));
+            }
+        }
+
+
+    }
+
 }
+
 

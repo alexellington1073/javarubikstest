@@ -10,18 +10,17 @@ public abstract class Piece {
     private int pieceY = 0;
     private int pieceZ = 0;
 
-    private int[] piecePosXYZ = (new int[]{pieceX,pieceY,pieceZ});
     private String colorX = "";
     private String colorY = "";
     private String colorZ = "";
 
-    private String[] colorXYZ = (new String[]{colorX,colorY,colorZ});
-
+    private int[] piecePosXYZ = new int[3];
+    private String[] colorXYZ = new String[3];
     public int getZeroCount() {
         int zeroCount = 0; //3 = core, 2 = center, 1 = edge, 0 = corner
-        if (pieceX == 0) zeroCount++;
-        if (pieceY == 0) zeroCount++;
-        if (pieceZ == 0) zeroCount++;
+        if (piecePosXYZ[0] == 0) zeroCount++;
+        if (piecePosXYZ[1] == 0) zeroCount++;
+        if (piecePosXYZ[2] == 0) zeroCount++;
         return zeroCount;
     }
 

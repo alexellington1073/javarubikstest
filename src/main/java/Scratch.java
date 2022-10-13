@@ -14,8 +14,11 @@ public class Scratch {
 
         Piece[] fullCube = c.setPieces();
         c.applyStickers(fullCube);
-        ce.duplicatePositionCheck(fullCube);
+        System.out.println("test");
+//        ce.duplicatePositionCheck(fullCube);
         c.rotateSide("x",-1,false,fullCube);
+        c.printCube(fullCube);
+        System.out.println("test");
     }
 
 }
