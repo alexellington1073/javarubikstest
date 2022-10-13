@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="639e16f4-4616-457b-bcb2-c674c00e17f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CenterPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CenterPiece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CornerPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CornerPiece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cube.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/EdgePiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EdgePiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Face.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Piece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Scratch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scratch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CenterPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CenterPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CornerPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CornerPiece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Side.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Cube.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Cube.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EdgePiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EdgePiece.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Piece.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Scratch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Scratch.class" afterDir="false" />
     </list>
@@ -44,6 +41,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Scratch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Scratch" />
@@ -69,6 +71,7 @@
       <workItem from="1665520347928" duration="10244000" />
       <workItem from="1665531484482" duration="3750000" />
       <workItem from="1665538139256" duration="3110000" />
+      <workItem from="1665625154034" duration="8338000" />
     </task>
     <servers />
   </component>
@@ -99,7 +102,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Scratch.java</url>
-          <line>17</line>
+          <line>21</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>

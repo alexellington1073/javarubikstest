@@ -5,20 +5,6 @@ public class CenterPiece extends Piece {
 
     public CenterPiece(){}
 
-    @Override
-    public boolean isCenterPiece() {
-        return true;
-    }
-
-    @Override
-    public boolean isEdgePiece() {
-        return false;
-    }
-
-    @Override
-    public boolean isCornerPiece() {
-        return false;
-    }
 
     public CenterPiece(String colorX) {
         this.colorX = colorX;

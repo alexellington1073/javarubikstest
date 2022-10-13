@@ -9,10 +9,25 @@ public abstract class Piece {
     private int pieceX = 0;
     private int pieceY = 0;
     private int pieceZ = 0;
+
+    private int[] piecePosXYZ = (new int[]{pieceX,pieceY,pieceZ});
     private String colorX = "";
     private String colorY = "";
     private String colorZ = "";
 
+    private String[] colorXYZ = (new String[]{colorX,colorY,colorZ});
+
+    public int getZeroCount() {
+        int zeroCount = 0; //3 = core, 2 = center, 1 = edge, 0 = corner
+        if (pieceX == 0) zeroCount++;
+        if (pieceY == 0) zeroCount++;
+        if (pieceZ == 0) zeroCount++;
+        return zeroCount;
+    }
+
+
+
+    //TODO cleanup Piece
 
     public int getPieceZ() {
         return pieceZ;
@@ -38,10 +53,6 @@ public abstract class Piece {
         this.pieceX = pieceX;
     }
 
-    public abstract boolean isCenterPiece();
-    public abstract boolean isEdgePiece();
-    public abstract boolean isCornerPiece();
-
     public String getColorZ() {
         return colorZ;
     }
@@ -64,5 +75,33 @@ public abstract class Piece {
 
     public void setColorX(String colorX) {
         this.colorX = colorX;
+    }
+
+    public int[] getPiecePosXYZ() {
+        return piecePosXYZ;
+    }
+
+    public int getPiecePosXYZ(int pos) {
+        return piecePosXYZ[pos];
+    }
+
+    public void setPiecePosXYZ(int[] piecePosXYZ) {
+        this.piecePosXYZ = piecePosXYZ;
+    }
+
+    public void setPiecePosXYZ(int xyz,int newPos) {
+        piecePosXYZ[xyz] = newPos;
+    }
+
+    public String[] getColorXYZ() {
+        return colorXYZ;
+    }
+
+    public String getColorXYZ(int pos) {
+        return colorXYZ[pos];
+    }
+
+    public void setColorXYZ(int pos, String color) {
+        colorXYZ[pos] = color;
     }
 }

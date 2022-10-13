@@ -26,43 +26,43 @@ public class Cube {
         int count = 0;
 
 
-            for (int x = -1; x <= 1; x++) {
-                for (int y = -1; y <= 1; y++) {
-                    for (int z = -1; z <= 1; z++) {
+        for (int x = -1; x <= 1; x++) {
+            for (int y = -1; y <= 1; y++) {
+                for (int z = -1; z <= 1; z++) {
 //                        while (count != 26) {
-                        int zeroCount = 0;
-                        if (x == 0) zeroCount++;
-                        if (y == 0) zeroCount++;
-                        if (z == 0) zeroCount++;
+                    int zeroCount = 0;
+                    if (x == 0) zeroCount++;
+                    if (y == 0) zeroCount++;
+                    if (z == 0) zeroCount++;
 
-                        switch (zeroCount) {
-                            case 0:
-                                CornerPiece corner = new CornerPiece();
-                                corner.setPieceX(x);
-                                corner.setPieceY(y);
-                                corner.setPieceZ(z);
-                                fullCube[count] = corner;
-                                count++;
-                                break;
-                            case 1:
-                                EdgePiece edge = new EdgePiece();
-                                edge.setPieceX(x);
-                                edge.setPieceY(y);
-                                edge.setPieceZ(z);
-                                fullCube[count] = edge;
-                                count++;
-                                break;
-                            case 2:
-                                CenterPiece center = new CenterPiece();
-                                center.setPieceX(x);
-                                center.setPieceY(y);
-                                center.setPieceZ(z);
-                                fullCube[count] = center;
-                                count++;
-                                break;
-                            case 3:
-                                break;
-                        }
+                    switch (zeroCount) {
+                        case 0:
+                            CornerPiece corner = new CornerPiece();
+                            corner.setPieceX(x);
+                            corner.setPieceY(y);
+                            corner.setPieceZ(z);
+                            fullCube[count] = corner;
+                            count++;
+                            break;
+                        case 1:
+                            EdgePiece edge = new EdgePiece();
+                            edge.setPieceX(x);
+                            edge.setPieceY(y);
+                            edge.setPieceZ(z);
+                            fullCube[count] = edge;
+                            count++;
+                            break;
+                        case 2:
+                            CenterPiece center = new CenterPiece();
+                            center.setPieceX(x);
+                            center.setPieceY(y);
+                            center.setPieceZ(z);
+                            fullCube[count] = center;
+                            count++;
+                            break;
+                        case 3:
+                            break;
+                    }
 
 //                    if (x == 0 && y == 0 && z == 0) continue; //no piece in the core
 //
@@ -92,9 +92,9 @@ public class Cube {
 //                    }
 
 
-                    }
                 }
             }
+        }
 
         return fullCube;
     }
@@ -107,13 +107,93 @@ public class Cube {
             if (piece.getPieceY() == 1) piece.setColorY("Yellow");
             if (piece.getPieceX() == -1) piece.setColorX("Red");
             if (piece.getPieceX() == 1) piece.setColorX("Orange");
-            if (piece.getPieceZ() == -1) piece.setColorZ("Blue");
-            if (piece.getPieceZ() == 1) piece.setColorZ("Green");
+            if (piece.getPieceZ() == -1) piece.setColorZ("Green");
+            if (piece.getPieceZ() == 1) piece.setColorZ("Blue");
         }
 
     }
 
-    public void rotateSide(String xyz, int position, boolean isClockwise) {
+
+    public void rotateSide(String xyz, int position, boolean isClockwise, Piece[] fullCube) {
+        final int X = 0;
+        final int Y = 1;
+        final int Z = 2;
+        int rotationAxis = -1;
+        int swapAxis1 = -1;
+        int swapAxis2 = -1;
+        if (xyz.equals("x")) {
+            rotationAxis = X;
+            swapAxis1 = Y;
+            swapAxis2 = Z;
+        }
+        // dont know if y & z swap axes are in the right order or if it even matters
+        if (xyz.equals("y")) {
+            rotationAxis = Y;
+            swapAxis1 = X;
+            swapAxis2 = Z;
+        }
+        if (xyz.equals("z")) {
+            rotationAxis = Z;
+            swapAxis1 = Y;
+            swapAxis2 = X;
+        }
+
+        if (!isClockwise) {
+            int store = swapAxis1;
+            swapAxis1 = swapAxis2;
+            swapAxis2 = store;
+
+        }
+
+
+
+        // x, -1, false
+        // swap y and z in all equations for clockwise
+
+        // corner1 [-1,-1,-1]   V <-  if y = z, y * -1
+        //corner2 [-1, 1,-1]    V  |  if y != z, set z equal to y
+        //corner3 [-1, 1, 1]    V  |
+        //corner4 [-1,-1, 1]    ---
+
+        // edge1 [-1,0,-1]      if y or z is not zero, change to zero (this step is always done, on top of next steps)
+        // edge2 [-1,1,0]       if y is not zero, move to z
+        // edge3 [-1,0,1]       if z is not zero, move to y, * -1
+        // edge4 [-1,-1,0]
+
+        //swap1 = z
+        //swap2 = y
+
+        for (Piece piece : fullCube) {
+            if (piece.getPiecePosXYZ()[rotationAxis] == position) {
+
+                //swap colors of 2 other axes
+                String colorSwap = piece.getColorXYZ()[swapAxis1];
+                piece.setColorXYZ(swapAxis1, piece.getColorXYZ(swapAxis2));
+                piece.setColorXYZ(swapAxis2, colorSwap);
+
+
+                if (piece.getZeroCount() == 0) {
+                    if (piece.getPiecePosXYZ(swapAxis1) == piece.getPiecePosXYZ(swapAxis2)) {
+                        piece.setPiecePosXYZ(swapAxis2,piece.getPiecePosXYZ(swapAxis2) * -1); //swapAxis too confusing
+                    }
+                    else piece.setPiecePosXYZ(swapAxis1,piece.getPiecePosXYZ(swapAxis2));
+                }
+
+                if(piece.getZeroCount() == 1) {
+                    int storeSwap1 = piece.getPiecePosXYZ(swapAxis1);
+                    int storeSwap2 = piece.getPiecePosXYZ(swapAxis2);
+
+                    if(piece.getPiecePosXYZ(swapAxis1) == 0) piece.setPiecePosXYZ(swapAxis1,0);
+                    else if (piece.getPiecePosXYZ(swapAxis2) == 0) piece.setPiecePosXYZ(swapAxis2,0);
+
+                    if(storeSwap1 != 0) piece.setPiecePosXYZ(swapAxis2,storeSwap1);
+                    if(storeSwap2 != 0) piece.setPiecePosXYZ(swapAxis1, storeSwap2 * -1);
+
+                    //boy I sure hope this works
+
+                }
+            }
+        }
 
     }
 }
